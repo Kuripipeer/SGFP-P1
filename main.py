@@ -1,5 +1,5 @@
 account = "prueba"
-password = "prueba"
+accountPassword = "prueba"
 
 
 def login():
@@ -7,7 +7,7 @@ def login():
     print("Por favor, introduce tu usuario y contraseña")
     user = input("Usuario: ").lower()
     password = input("Contraseña: ")
-    if user == account and password == password:
+    if user == account and password == accountPassword:
         print("Has iniciado sesión correctamente")
         return True
     else:
@@ -16,11 +16,13 @@ def login():
 
 
 def main():
+    while not login():
+        print("Vuelve a intentarlo")
+
     if login():
         print("¡Bienvenido!")
     else:
         print("Vuelve a intentarlo")
 
 
-if __name__ == "__main__":
-    main()
+main()
