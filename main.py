@@ -62,16 +62,16 @@ def main():
                     clear_console()
                     match sub_option:
                         case "1":
-                            concept, amount = transacciones.depositar()
+                            concept, amount, category = transacciones.depositar()
                             cuenta.set_balance(cuenta.get_balance() + amount)
                             movimientos.agregar_movimiento(
-                                f"Depósito - Concepto: {concept} - Cantidad: +${amount}"
+                                f"Depósito - Categoria: {category} - Concepto: {concept} - Cantidad: +${amount}"
                             )
                             cuenta.complete_goal()
                             pause()
                             break
                         case "2":
-                            concept, amount = transacciones.retirar(
+                            concept, amount, category = transacciones.retirar(
                                 cuenta.get_balance(), cuenta.get_limitPerMonth()
                             )
                             if not concept or amount == 0.0:
@@ -83,7 +83,7 @@ def main():
                                 cuenta.get_limitPerMonth() - amount
                             )
                             movimientos.agregar_movimiento(
-                                f"Retiro - Concepto: {concept} - Cantidad: -${amount}"
+                                f"Retiro - Categoria: {category} - Concepto: {concept} - Cantidad: -${amount}"
                             )
                             pause()
                             break

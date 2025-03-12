@@ -12,16 +12,22 @@ class Transacciones:
 
     def depositar(self):
         print("Depositar")
+        category = ""
+        while not category:
+            category = input("Categoria: ")
         concept = ""
         while not concept:
             concept = input("Concepto: ")
         amount = 0.0
         while amount <= 0.0:
             amount = float(input("Cantidad a depositar (debe ser mayor a 0.0): "))
-        return concept, amount
+        return concept, amount, category
 
     def retirar(self, balance, limit):
         print("Retirar")
+        category = ""
+        while not category:
+            category = input("Categoria: ")
         concept = ""
         while not concept:
             concept = input("Concepto: ")
@@ -39,4 +45,4 @@ class Transacciones:
             concept = ""
             return concept, 0.0
 
-        return concept, amount
+        return concept, amount, category
