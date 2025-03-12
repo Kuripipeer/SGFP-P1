@@ -38,11 +38,13 @@ class Transacciones:
         if amount > balance:
             print("No tienes suficientes fondos")
             concept = ""
-            return concept, 0.0
+            category = ""
+            return concept, 0.0, category
 
         if amount > limit:
             print("Has excedido el límite de retiro mensual")
             concept = ""
-            return concept, 0.0
+            category = ""
+            return concept, 0.0, category
 
         return concept, amount, category
