@@ -2,6 +2,8 @@
 
 # Proyecto Primer parcial SGFP-P1
 
+Hola git
+
 # INTEGRANTES
 - Angel Alejando Becerra Rojas
 - Christian Axel Moreno Flores
